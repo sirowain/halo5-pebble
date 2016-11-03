@@ -113,9 +113,13 @@ function haloGetStats(url)
 
       // Read data
       var kd_str = json.totals.kd_str;
+      var kills_str = json.totals.totalkills;
+      var deaths_str = json.totals.totaldeaths;
       
       var dict = {
-        'totals_ratio': kd_str
+        'totals_ratio': kd_str,
+        'totals_kills': kills_str,
+        'totals_deaths': deaths_str
       };
       
       console.log('JSON: ' + JSON.stringify(dict));

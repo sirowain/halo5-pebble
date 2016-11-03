@@ -2,7 +2,6 @@
 
 #include "src/c/totals_window.h"
 
-Window *my_window;
 static GBitmap *s_bitmap;
 
 static uint8_t *s_img_data;
@@ -34,13 +33,25 @@ static void inbox_received_callback(DictionaryIterator *iter, void *context) {
   Tuple *kd_tuple = dict_find(iter, MESSAGE_KEY_totals_ratio);
   if(kd_tuple) {
     char *kd_str = kd_tuple->value->cstring;
+    totals_window_set_ratio(kd_str);
+  }
+  
+  Tuple *kills_tuple = dict_find(iter, MESSAGE_KEY_totals_kills);
+  if(kills_tuple) {
+    int kills = kills_tuple->value->uint32;
+    static char buf[] = "00000000000";
+    snprintf(buf, sizeof(buf), "%d", kills);
     
-    static char s_buffer[10];
-    snprintf(s_buffer, sizeof(s_buffer), "K/D: %s", kd_str);
+    totals_window_set_kills(buf);
+  }
+  
+  Tuple *deaths_tuple = dict_find(iter, MESSAGE_KEY_totals_deaths);
+  if(deaths_tuple) {
+    int deaths = deaths_tuple->value->uint32;
+    static char buf[] = "00000000000";
+    snprintf(buf, sizeof(buf), "%d", deaths);
     
-    APP_LOG(APP_LOG_LEVEL_DEBUG , "K/D: %s", kd_str);
-    
-    totals_window_set_ratio(s_buffer);
+    totals_window_set_deaths(buf);
   }
   
   Tuple *img_size_t = dict_find(iter, MESSAGE_KEY_DataLength);
