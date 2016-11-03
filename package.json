@@ -1,0 +1,48 @@
+{
+    "author": "Riccardo Albertini",
+    "dependencies": {},
+    "keywords": [],
+    "name": "halo5stats",
+    "pebble": {
+        "capabilities": [
+            "configurable"
+        ],
+        "displayName": "Halo 5 Stats",
+        "enableMultiJS": true,
+        "messageKeys": [
+            "totals_ratio",
+            "emblem",
+            "DataLength",
+            "DataChunk",
+            "ChunkSize",
+            "Index",
+            "Complete",
+            "totals_kills",
+            "totals_deaths"
+        ],
+        "projectType": "native",
+        "resources": {
+            "media": [
+                {
+                    "file": "images/simple_down.png",
+                    "name": "IMAGE_ARROW_DOWN",
+                    "targetPlatforms": null,
+                    "type": "bitmap"
+                }
+            ]
+        },
+        "sdkVersion": "3",
+        "targetPlatforms": [
+            "aplite",
+            "basalt",
+            "chalk",
+            "diorite",
+            "emery"
+        ],
+        "uuid": "544eb315-e8f4-4b76-9805-c1fda665acdc",
+        "watchapp": {
+            "watchface": false
+        }
+    },
+    "version": "1.0.0"
+}
