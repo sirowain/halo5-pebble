@@ -1,6 +1,7 @@
 #include <pebble.h>
 
 #include "src/c/totals_window.h"
+#include "src/c/graph_window.h"
 
 static GBitmap *s_bitmap;
 
@@ -97,9 +98,9 @@ int main(void) {
   app_message_register_inbox_dropped(inbox_dropped_callback);
   const int inbox_size = 256;
   const int outbox_size = 256;
-	app_message_open(inbox_size, outbox_size);
+  //app_message_open(inbox_size, outbox_size);
   
-  show_totals_window();
+  show_graph_window();
   app_event_loop();
   handle_deinit();
 }

@@ -26,18 +26,18 @@
                 {
                     "file": "images/simple_down.png",
                     "name": "IMAGE_ARROW_DOWN",
-                    "targetPlatforms": null,
                     "type": "bitmap"
+                },
+                {
+                    "type": "raw",
+                    "name": "GRAPH_SEQUENCE",
+                    "file": "images/graph_sequence.pdc"
                 }
             ]
         },
         "sdkVersion": "3",
         "targetPlatforms": [
-            "aplite",
-            "basalt",
-            "chalk",
-            "diorite",
-            "emery"
+            "diorite"
         ],
         "uuid": "544eb315-e8f4-4b76-9805-c1fda665acdc",
         "watchapp": {

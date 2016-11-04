@@ -147,7 +147,6 @@ void totals_window_set_background(GBitmap *bitmap) {
   effect_layer_add_effect(s_effect_layer, effect_invert, NULL);
   layer_add_child(window_get_root_layer(s_window), effect_layer_get_layer(s_effect_layer));
   layer_add_child(window_get_root_layer(s_window), (Layer *)SRWN);
-  text_layer_set_text(s_textlayer_kd, "ratio");
 }
 
 void totals_window_set_kills(char* kills) {
